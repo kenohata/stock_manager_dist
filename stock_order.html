@@ -57,6 +57,28 @@
       var url  = "https://fierce-sea-5268.herokuapp.com/stock_orders";
       var rows = $('#products-rows')
 
+      var template = function(order){
+        var temp = "";
+        var date = moment(order.created_at);
+
+        temp += "<div>";
+        temp += "<div class='col-md-3'>";
+        temp += date.format("MM/DD hh:mm Z");
+        temp += "</div>";
+        temp += "<div class='col-md-3'>";
+        temp += order.items[0].quantity;
+        temp += "</div>";
+        temp += "<div class='col-md-3'>";
+        temp += order.items[1].quantity;
+        temp += "</div>";
+        temp += "<div class='col-md-3'>";
+        temp += order.items[2].quantity;
+        temp += "</div>";
+        temp += "</div>";
+
+        return temp;
+      };
+
       $.get(url, function(data){
         rows.append("appendできてる！");
       });
