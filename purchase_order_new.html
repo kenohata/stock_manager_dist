@@ -53,11 +53,20 @@
 
   <script type="text/javascript">
     $(function(){
-	  var x = $('#submit');
+	  var item1 = $('input[name=product_1]');
+	  var item2 = $('input[name=product_2]');
+	  var item3 = $('input[name=product_3]');
+	  var button = $('#submit');
 	  
-	  x.click(function(){
-	    alert("クリックしました");
+	  button.click(function(){
+		var string = "";
+		string += "1番目は" + item1.val() + "こ\n";
+		string += "2番目は" + item2.val() + "こ\n";
+		string += "3番目は" + item3.val() + "こ\n";
+
+		alert(string);
 	  });
+
 	})
   </script>
 
