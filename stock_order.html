@@ -80,7 +80,9 @@
       };
 
       $.get(url, function(data){
-        rows.append("appendできてる！");
+        data.orders.forEach(function(order){
+          rows.append(template(order));
+        });
       });
 
     });
