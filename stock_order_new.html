@@ -62,9 +62,25 @@
 
       button.click(function(){
         if(confirm("確定します。よろしいですか？")){
-          alert(item1.val());
-          alert(item2.val());
-          alert(item3.val());
+          var data = {
+            order: {
+              orderer_name: "ohataken",
+              items: [
+                { product_id: 1, quantity: parseInt(item1.val()) },
+                { product_id: 2, quantity: parseInt(item2.val()) },
+                { product_id: 3, quantity: parseInt(item3.val()) },
+              ]
+            }
+          };
+
+          $.ajax({
+            url:      url,
+            data:     data,
+            type:     "GET",
+            success: function(d){
+              location.assign("stock_order.html");
+            },
+          });
         };
       });
     });
