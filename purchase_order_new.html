@@ -53,8 +53,11 @@
 
   <script type="text/javascript">
     $(function(){
-	  var x = $('input[name=product_1]');
-	  alert(x.val());
+	  var x = $('#submit');
+	  
+	  x.click(function(){
+	    alert("クリックしました");
+	  });
 	})
   </script>
 
