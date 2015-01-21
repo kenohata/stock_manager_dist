@@ -59,12 +59,14 @@
 	  var button = $('#submit');
 	  
 	  button.click(function(){
-		var string = "";
-		string += "1番目は" + item1.val() + "こ\n";
-		string += "2番目は" + item2.val() + "こ\n";
-		string += "3番目は" + item3.val() + "こ\n";
+		if(confirm("集計結果を見ますか？")){
+			var string = "";
+			string += "1番目は" + item1.val() + "こ\n";
+			string += "2番目は" + item2.val() + "こ\n";
+			string += "3番目は" + item3.val() + "こ\n";
 
-		alert(string);
+			alert(string);
+		}
 	  });
 
 	})
