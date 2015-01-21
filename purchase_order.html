@@ -53,6 +53,15 @@
   </div>
 
   <script type="text/javascript">
+    $(function(){
+      var url = "https://fierce-sea-5268.herokuapp.com/purchase_orders";
+      var rows = $('#products-rows');
+
+      $.get(url, function(data){
+        rows.append("1: " + data.orders[0].items[0].quantity);
+      });
+
+    });
   </script>
 
 </body>
