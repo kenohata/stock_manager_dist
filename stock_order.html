@@ -57,6 +57,10 @@
       var url  = "https://fierce-sea-5268.herokuapp.com/stock_orders";
       var rows = $('#products-rows')
 
+      $.get(url, function(data){
+        rows.append("appendできてる！");
+      });
+
     });
   </script>
 
