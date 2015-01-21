@@ -60,6 +60,11 @@
       var item3  = $('input[name=product_3]');
       var button = $('#submit');
 
+      button.click(function(){
+        if(confirm("確定します。よろしいですか？")){
+          alert("OK!");
+        };
+      });
     });
   </script>
 
